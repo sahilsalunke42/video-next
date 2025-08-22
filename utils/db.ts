@@ -6,7 +6,7 @@ if (!MONGODB_URI) {
     throw new Error("Please define the MONGODB_URI environment variable");
 };
 
-let cached = global.mongoose
+let cached = global.mongoose //cached because this variable will keep our connection cached like if there already exists a connection we'll use that connection and if there is no connection it will create a new one
 
 if (!cached) {
     cached = global.mongoose = { conn: null, promise: null };
